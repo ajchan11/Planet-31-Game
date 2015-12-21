@@ -1,0 +1,25 @@
+{
+  "name": "test-planet-31",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Studio-18/Test-Planet-31.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Studio-18/Test-Planet-31/issues"
+  },
+  "homepage": "https://github.com/Studio-18/Test-Planet-31#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
+}

@@ -11,18 +11,43 @@
 
     window.onload = function() {
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
         function preload () {
+          //  256x256 is the size of each frame
 
-            game.load.image('logo', 'phaser.png');
+          //  There are 48 frames in the PNG - you can leave this value blank if the frames fill up the entire PNG, but in this case there are some
+          //  blank frames at the end, so we tell the loader how many to load
+
+          game.load.spritesheet('explosion', '../assets/sprites/explosion_32x32.png', 32, 32, 48);
 
         }
 
         function create () {
 
-            var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-            logo.anchor.setTo(0.5, 0.5);
+          var explosion = game.add.sprite(300, 200, 'explosion');
+
+          //  Here we add a new animation called 'explode'
+          //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'mummy' sprite sheet
+          var explode = explosion.animations.add('explode');
+
+          //  And this starts the animation playing by using its key ("explode")
+          //  30 is the frame rate (30fps)
+          //  true means it will loop when it finishes
+          explosion.animations.play('explode', 30, true);
+
+          //  Set the scale of the sprite
+          // explosion.scale.setTo(256, 192);
+
+          //  You can also scale sprites like this:
+          // explosion.scale.x = 64;
+          // explosion.scale.y = 32;
+
+        }
+
+        function update() {
+
+
 
         }
 

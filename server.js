@@ -28,6 +28,10 @@ app.get( '/test', function( req, res ) {
 	res.sendFile( __dirname + '/public/phaser_tutorial_02/part9.html' )
 } )
 
+app.get( '/game', function( req, res ) {
+	res.sendFile( __dirname + '/views/main.html' )
+} )
+
 app.listen( port, function() {
 	console.log( "Server up and running on port " + port )
 } )

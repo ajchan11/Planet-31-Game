@@ -6,22 +6,60 @@ window.onload = function() {
     console.log("loading")
     function preload() {
 
-        game.load.image('background','assets/img/mapgame.png');
+        game.load.tilemap('map', 'assets/map/map3.json', null,  Phaser.Tilemap.TILED_JSON);
+		
+		game.load.image('tiles','assets/map/map3.png');
+		
         game.load.image('player','assets/img/pirate1.png');
+		
 		navalShip.preload()
 		pirateShip.preload()
+		
     }
-
+	var content = [
+	" ",
+	"photon storm presents",
+	"a phaser production",
+	" ",
+	"Kern of Duty",
+	" ",
+	"directed by rich davey",
+	"rendering by mat groves",
+	"    ",
+	"03:45, November 4th, 2014",
+	"somewhere in the north pacific",
+	"mission control bravo ...",
+	];
+	
+	var text;
+	var index = 0;
+	var line = '';
+	var map;
+	var layer;
     var player;
 	var enemy
     var cursors;
 	var enemyMove, move;
-
+	
     function create() {
+		
+		map = game.add.tilemap('map');
+		
+		map.addTilesetImage('terrain', 'tiles');
 
-        game.add.tileSprite(0, 0, 3200, 3200, 'background');
+		// var waterLayer = map.createLayer('water');
+		var layerLand = map.createLayer('land');
+		
+		// layer.resizeWorld();
+		
+        // game.add.tileSprite(0, 0, 6400, 6400, 'background');
+		
+		
+		// text.anchor.set(0.5);
+		
+		nextLine();
 
-        game.world.setBounds(0, 0, 3200, 3200);
+        game.world.setBounds(0, 0, 6400, 6400);
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -57,6 +95,8 @@ window.onload = function() {
     }
 
     function update() {
+		text.x = Math.floor(player.x + player.width / 1);
+		text.y = Math.floor(player.y + player.height / 1);	
 
         player.body.velocity.x = 0;
 		player.body.velocity.y = 0;
@@ -122,4 +162,31 @@ window.onload = function() {
         game.debug.cameraInfo(game.camera, 32, 32);
         game.debug.spriteCoords(player, 32, 500);
     }
+	function updateLine() {
+
+    if (line.length < content[index].length)
+    {
+        line = content[index].substr(0, line.length + 1);
+        // text.text = line;
+        text.setText(line);
+    }
+    else
+    {
+        //  Wait 2 seconds then start a new line
+        game.time.events.add(Phaser.Timer.SECOND * 1, nextLine, this);
+    }
+
+	}
+	
+	function nextLine() {
+	
+		index++;
+	
+		if (index < content.length)
+		{
+			line = '';
+			game.time.events.repeat(80, content[index].length + 1, updateLine, this);
+		}
+	
+	}
 }

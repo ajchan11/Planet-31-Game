@@ -6,7 +6,7 @@ window.onload = function() {
     console.log("loading")
     function preload() {
 
-        game.load.image('background','assets/img/mapgame.png');
+        game.load.image('background','assets/img/mapgame.png');      
         game.load.image('player','assets/img/pirate1.png');
 		navalShip.preload()
 		pirateShip.preload()

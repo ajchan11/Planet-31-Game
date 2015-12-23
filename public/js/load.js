@@ -5,27 +5,56 @@ var player
 var playerShip
 var cursors
 var move
+var land
+var islands
+var layer
 
 
 function preload() {
 	map = new Map( sprites.mapSprite() )
 
-	playerShip = new Player( "Test", [ sprites.playerShip(), sprites.player() ] )
+	playerShip = new Player( "Test", [ sprites.rowBoat(), sprites.playerShip(), sprites.player() ] )
+
+//TILEMAPPING COLLISION AREA
+	// game.load.tilemap('map', 'assets/map/map3.json', null,  Phaser.Tilemap.TILED_JSON);
+
+	// game.load.image('tiles','assets/map/map3.png');
+	game.load.tilemap( 'test', 'assets/map/mapCSV.json', null, Phaser.Tilemap.TILED_JSON )
+	game.load.image( 'islands', 'assets/map/map3.png' )
+
+//=============================
 
 	map.preload()
 	playerShip.preload()
 }
 
 function create() {
+
+
 	//SET GAME OBJECT PROPERTIES
+	game.physics.startSystem( Phaser.Physics.ARCADE )
 	game.add.tileSprite( 0, 0, 3200, 3200, map.sprite.name )
 	game.world.setBounds( 0, 0, 3200, 3200 )
-	game.physics.startSystem( Phaser.Physics.ARCADE )
+	//=======================
+
+
+	//Images for testing
+	islands = game.add.tilemap( 'test' )
+	islands.addTilesetImage( 'terrain', 'islands' )
+
+	islands.setCollisionBetween( 1, 400 )
+
+	layer = islands.createLayer( 'land' )
+	// layer.debug = true
+	// layer.resizeWorld()
+	// game.physics.arcade.enable( land )
+	// land.inputEnabled = false
 	//=======================
 
 	//SET PLAYERSHIP OBJECT
 	playerShip.create()
-	game.camera.follow( playerShip.gameObj )
+	playerShip.gameObj.body.collideWorldBounds = true;
+	// game.camera.follow( playerShip.gameObj )
 	//=======================
 
 	//SET CURSORS OBJECT
@@ -36,10 +65,12 @@ function create() {
 	cursors.D = game.input.keyboard.addKey( 68 )
 	//=======================
 
+
 }
 
 function update() {
 
+	game.physics.arcade.collide( playerShip.gameObj, layer )
 	move = ''
 	if (cursors.up.isDown)
 	{
@@ -73,8 +104,8 @@ function update() {
 
 function render() {
 
-        game.debug.cameraInfo(game.camera, 32, 32);
-        game.debug.spriteCoords(playerShip.gameObj, 32, 500);
+        // game.debug.cameraInfo(game.camera, 32, 32);
+        // game.debug.spriteCoords(playerShip.gameObj, 32, 500);
     }
 
 window.onload = function() {

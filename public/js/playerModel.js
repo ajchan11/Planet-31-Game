@@ -5,13 +5,12 @@ function Player( name, sprites ) {
 }
 
 Player.prototype.preload = function() {
-	console.log( this.sprite )
 	game.load.spritesheet( this.sprites[0].name, this.sprites[0].path, this.sprites[0].W, this.sprites[0].H, 16 )
 	game.load.spritesheet( this.sprites[1].name, this.sprites[1].path, this.sprites[1].W, this.sprites[0].H, 16 )
 }
 
 Player.prototype.create = function() {
-	this.gameObj = game.add.sprite( 32, game.world.height - 200, this.sprites[0].name )
+	this.gameObj = game.add.sprite( 32, 32, this.sprites[0].name )
 
 	this.gameObj.animations.add('down',  [ 0, 1, 2, 3 ], 3, true)
 	this.gameObj.animations.add('left',  [ 4, 5, 6, 7 ], 3, true)
@@ -19,6 +18,7 @@ Player.prototype.create = function() {
 	this.gameObj.animations.add('up',    [ 12, 13, 14, 15 ], 3, true)
 	game.physics.arcade.enable( this.gameObj )
 	game.camera.follow( this.gameObj )
+	this.gameObj.collideWorldBounds = true
 }
 
 Player.prototype.sailState = function() {
@@ -48,6 +48,8 @@ Player.prototype.update = function( move ) {
 		case 'right':
 			this.gameObj.body.velocity.x = 300
 			break
+		// case 'b' :
+
 		default:
 			this.gameObj.body.velocity.x = 0
 			this.gameObj.body.velocity.y = 0

@@ -10,14 +10,14 @@ Player.prototype.preload = function() {
 }
 
 Player.prototype.create = function() {
-	this.gameObj = game.add.sprite( 32, 32, this.sprites[0].name )
+	this.gameObj = game.add.sprite( 1000, 1000, this.sprites[0].name )
 
 	this.gameObj.animations.add('down',  [ 0, 1, 2, 3 ], 3, true)
 	this.gameObj.animations.add('left',  [ 4, 5, 6, 7 ], 3, true)
 	this.gameObj.animations.add('right', [ 8, 9, 10, 11 ], 3, true)
 	this.gameObj.animations.add('up',    [ 12, 13, 14, 15 ], 3, true)
 	game.physics.arcade.enable( this.gameObj )
-	game.camera.follow( this.gameObj )
+	// game.camera.follow( this.gameObj )
 	this.gameObj.collideWorldBounds = true
 }
 
@@ -29,7 +29,7 @@ Player.prototype.sailState = function() {
 	this.gameObj.animations.add('right', [ 8, 9, 10, 11 ], 3, true)
 	this.gameObj.animations.add('up',    [ 12, 13, 14, 15 ], 3, true)
 	game.physics.arcade.enable( this.gameObj )
-	game.camera.follow( this.gameObj )
+	// game.camera.follow( this.gameObj )
 }
 
 Player.prototype.update = function( move ) {

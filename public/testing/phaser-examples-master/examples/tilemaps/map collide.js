@@ -3,9 +3,9 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-    game.load.tilemap('mario', 'assets/tilemaps/maps/super_mario.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('tiles', 'assets/tilemaps/tiles/super_mario.png');
-    game.load.image('player', 'assets/sprites/phaser-dude.png');
+    game.load.tilemap('mario', 'testing/phaser-examples-master/examples/assets/tilemaps/maps/super_mario.json', null, Phaser.Tilemap.TILED_JSON);
+    game.load.image('tiles', 'testing/phaser-examples-master/examples/assets/tilemaps/tiles/super_mario.png');
+    game.load.image('player', 'testing/phaser-examples-master/examples/assets/sprites/phaser-dude.png');
 
 }
 
@@ -32,7 +32,7 @@ function create() {
     map.setCollisionBetween(20, 25);
     map.setCollisionBetween(27, 29);
     map.setCollision(40);
-    
+
     layer = map.createLayer('World1');
 
     //  Un-comment this on to see the collision tiles

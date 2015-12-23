@@ -1,4 +1,3 @@
-console.log( "Hello" )
 var game
 var map
 var player
@@ -33,8 +32,8 @@ function create() {
 
 	//SET GAME OBJECT PROPERTIES
 	game.physics.startSystem( Phaser.Physics.ARCADE )
-	game.add.tileSprite( 0, 0, 3200, 3200, map.sprite.name )
-	game.world.setBounds( 0, 0, 3200, 3200 )
+	game.add.tileSprite( 0, 0, 1000, 1000, map.sprite.name )
+	// game.world.setBounds( 0, 0, 4000, 4000 )
 	//=======================
 
 
@@ -54,7 +53,6 @@ function create() {
 	//SET PLAYERSHIP OBJECT
 	playerShip.create()
 	playerShip.gameObj.body.collideWorldBounds = true;
-	// game.camera.follow( playerShip.gameObj )
 	//=======================
 
 	//SET CURSORS OBJECT
@@ -65,11 +63,11 @@ function create() {
 	cursors.D = game.input.keyboard.addKey( 68 )
 	//=======================
 
-
+	// game.camera.follow( playerShip.gameObj )
 }
 
 function update() {
-
+	game.camera.focusOnXY( playerShip.gameObj.position.x, playerShip.gameObj.position.y )
 	game.physics.arcade.collide( playerShip.gameObj, layer )
 	move = ''
 	if (cursors.up.isDown)
@@ -104,10 +102,10 @@ function update() {
 
 function render() {
 
-        // game.debug.cameraInfo(game.camera, 32, 32);
-        // game.debug.spriteCoords(playerShip.gameObj, 32, 500);
+        game.debug.cameraInfo(game.camera, 32, 32);
+        game.debug.spriteCoords(playerShip.gameObj, 32, 500);
     }
 
 window.onload = function() {
-	game = new Phaser.Game(2000, 2000, Phaser.CANVAS, 'Test-Planet', { preload: preload, create: create, update: update, render: render } )
+	game = new Phaser.Game(4000, 4000, Phaser.CANVAS, 'Test-Planet', { preload: preload, create: create, update: update, render: render } )
 }

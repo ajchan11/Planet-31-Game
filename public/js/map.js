@@ -96,9 +96,6 @@ window.onload = function() {
     }
 
     function update() {
-		text.x = Math.floor(player.x + player.width / 1);
-		text.y = Math.floor(player.y + player.height / 1);
-
         player.body.velocity.x = 0;
 		player.body.velocity.y = 0;
 

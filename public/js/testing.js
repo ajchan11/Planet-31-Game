@@ -76,5 +76,5 @@ function render() {
 window.onload = function() {
 	windowHeight = window.innerHeight
 	windowWidth = window.innerWidth
-	game = new Phaser.Game(windowWidth - 20, windowHeight - 100, Phaser.Auto, 'Test-Planet', { preload: preload, create: create, update: update, render: render } )
+	game = new Phaser.Game(windowWidth - 100, windowHeight - 100, Phaser.Auto, 'Test-Planet', { preload: preload, create: create, update: update, render: render } )
 }

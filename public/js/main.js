@@ -9,6 +9,9 @@ var islands
 var floorLayer, waterLayer, furnLayer, wallLayer, doorLayer, peepLayer
 var layers =  [ floorLayer, waterLayer, furnLayer, wallLayer, doorLayer, peepLayer ]
 var windowHeight, windowWidth
+var button1
+var button2
+var button3
 
 //======TEST global varibales if needed==========
 // var ruby
@@ -45,6 +48,8 @@ var windowHeight, windowWidth
 function preload() {
 	MAP.load()
 	NPC.load()
+    doorAndChest.load()
+    game.load.spritesheet('player','assets/img/npc/player.png',64,64);
 }
 /**********************************************************************/
 function create() {
@@ -57,6 +62,7 @@ function create() {
 
 	//========Player Physics/Creation===============
 	player = game.add.sprite( 1408, 1472, 'player' )
+    player.scale.setTo(0.5,0.5)
 	game.physics.enable( player )
 
     // game.physics.arcade.gravity.y = 250;
@@ -105,17 +111,9 @@ function create() {
 	// }, this )
 
 
-	var button1 = this.input.keyboard.addKey(Phaser.KeyCode.ONE);
-	var button2 = this.input.keyboard.addKey(Phaser.KeyCode.TWO);
-	var button3 = this.input.keyboard.addKey(Phaser.KeyCode.THREE);
-
-	button1.onDown.add(function(key)
-		{
-			console.log("boom")
-		}, this);
-
 	//CREATES NPCs AND TEXT BOXES
 	NPC.create()
+    doorAndChest.create()
 }
 /**********************************************************************/
 function update() {

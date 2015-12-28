@@ -29,7 +29,7 @@ MAP = {
 		floorLayer = map.createLayer( 'floor' )
 		furnLayer  = map.createLayer( 'furniture' )
 		wallLayer  = map.createLayer( 'walls' )
-		doorLayer  = map.createLayer( 'door and chest' )
+		// doorLayer  = map.createLayer( 'door and chest' )
 		// peepLayer  = map.createLayer( 'peeps' )
 
 
@@ -37,7 +37,7 @@ MAP = {
 		floorLayer.resizeWorld()
 		furnLayer.resizeWorld()
 		wallLayer.resizeWorld()
-		doorLayer.resizeWorld()
+		// doorLayer.resizeWorld()
 		// peepLayer.resizeWorld()
 
 		console.log("3")

@@ -143,7 +143,7 @@ var NPC = {
 		game.guard2 = game.add.sprite(4480, 384, 'npc2');
 		game.guard3 = game.add.sprite(4864, 384, 'npc2');
 		game.joey = game.add.sprite(320, 3008, 'npc18');
-		game.isabel = game.add.sprite(320, 2944, 'npc11');
+		game.isabel = game.add.sprite(160, 2688, 'npc11');
 		game.andre = game.add.sprite(128, 2944, 'npc18');
 		game.alexis = game.add.sprite(384, 2816, 'npc10');
 		game.stephanie = game.add.sprite(288, 2400, 'npc7');
@@ -162,6 +162,18 @@ var NPC = {
 		game.bigboss = game.add.sprite(6368, 6240, 'npc22');
 		game.gboss1 = game.add.sprite(5216, 6144, 'npc2');
 		game.gboss2 = game.add.sprite(5888, 5888, 'npc2');
+        
+		game.gboss3 = game.add.sprite(5120, 4672, 'npc2');
+		game.gboss4 = game.add.sprite(5536, 4416, 'npc2');
+		game.gboss5 = game.add.sprite(5728, 4384, 'npc2');
+		game.gboss6 = game.add.sprite(5888, 4384, 'npc2');
+		game.gboss7 = game.add.sprite(6080, 4352, 'npc2');
+		game.gboss8 = game.add.sprite(6272, 4352, 'npc2');
+		game.gboss9 = game.add.sprite(6016, 4672, 'npc2');
+		game.gboss10 = game.add.sprite(6048, 4800, 'npc2');
+		game.gboss11 = game.add.sprite(5856, 5760, 'npc2');
+		game.gboss12 = game.add.sprite(5856, 5760, 'npc2');
+        
 		game.ervin = game.add.sprite(2336, 5440, 'npc8');
 		game.blanks = game.add.sprite(3808, 6240, 'npc16');
         
@@ -191,6 +203,16 @@ var NPC = {
 		game.bigboss.scale.setTo(0.5,0.5)
 		game.gboss1.scale.setTo(0.5,0.5)
 		game.gboss2.scale.setTo(0.5,0.5)
+		game.gboss3.scale.setTo(0.5,0.5)
+		game.gboss4.scale.setTo(0.5,0.5)
+		game.gboss5.scale.setTo(0.5,0.5)
+		game.gboss6.scale.setTo(0.5,0.5)
+		game.gboss7.scale.setTo(0.5,0.5)
+		game.gboss8.scale.setTo(0.5,0.5)
+		game.gboss9.scale.setTo(0.5,0.5)
+		game.gboss10.scale.setTo(0.5,0.5)
+		game.gboss11.scale.setTo(0.5,0.5)
+		game.gboss12.scale.setTo(0.5,0.5)
 		game.ervin.scale.setTo(0.5,0.5)
 		game.blanks.scale.setTo(0.5,0.5)
         game.walder.scale.setTo(0.5,0.5)
@@ -198,7 +220,7 @@ var NPC = {
 		game.pirate1.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.guard1.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.walder.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
-		game.hank.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.hank.animations.add('move', [ 48, 49, 50, 51, 52, 53, 54], 10, true);
 		game.guard2.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.guard3.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.joey.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
@@ -218,10 +240,20 @@ var NPC = {
 		game.inmate5.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.inmate6.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.inmate7.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
-		game.bigboss.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.bigboss.animations.add('move', [ 48, 49, 50, 51, 52, 53, 54], 10, true);
 		game.gboss1.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.gboss2.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
-		game.ervin.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss3.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss4.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss5.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss6.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss7.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss8.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss9.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss10.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss11.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
+		game.gboss12.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);		
+        game.ervin.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
 		game.blanks.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
         game.walder.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);       
         game.walder.animations.add('move', [ 130, 131, 132, 133, 134, 135, 136, 137], 10, true);
@@ -252,6 +284,16 @@ var NPC = {
 		game.bigboss.animations.play('move');
 		game.gboss1.animations.play('move');
 		game.gboss2.animations.play('move');
+        game.gboss3.animations.play('move');
+		game.gboss4.animations.play('move');
+		game.gboss5.animations.play('move');
+		game.gboss6.animations.play('move');
+		game.gboss7.animations.play('move');
+		game.gboss8.animations.play('move');
+		game.gboss9.animations.play('move');
+		game.gboss10.animations.play('move');
+		game.gboss11.animations.play('move');
+		game.gboss12.animations.play('move');		
 		game.ervin.animations.play('move');
 		game.blanks.animations.play('move');
         game.walder.animations.play('move');

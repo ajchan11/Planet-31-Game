@@ -151,7 +151,16 @@ create: function() {
         game.woodDoor20 = game.add.sprite(6112, 4320, 'woodLeft');
         game.woodDoor21 = game.add.sprite(6304, 4320, 'woodLeft');
         game.woodDoor22 = game.add.sprite(6336, 4832, 'woodLeft');
+        game.woodDoor23 = game.add.sprite(352, 2880, 'woodLeft');
+        game.woodDoor24 = game.add.sprite(1568, 1472, 'woodLeft'); 
+        game.woodDoor25 = game.add.sprite(96, 2848, 'woodLeft');               
+        game.woodDoor26 = game.add.sprite(320, 5824, 'woodLeft');                                                     
+        game.woodDoor27 = game.add.sprite(4416, 320, 'woodLeft');                               
+        game.woodDoor28 = game.add.sprite(4448, 320, 'woodLeft');                               
 
+
+
+        
         game.steelDoor1 = game.add.sprite(256 ,6208, 'steelLeft');
         game.steelDoor2 = game.add.sprite(288, 6176, 'steelLeft');
         game.steelDoor3 = game.add.sprite(288, 6240, 'steelLeft');
@@ -166,8 +175,10 @@ create: function() {
         game.steelDoor12 = game.add.sprite(896, 3392, 'steelLeft');
         game.steelDoor13 = game.add.sprite(3168, 2912, 'steelLeft');
         game.steelDoor14 = game.add.sprite(4544, 224, 'steelLeft');
-        game.steelDoor15 = game.add.sprite(3904, 6336, 'steelLeft');
-       
+        game.steelDoor15 = game.add.sprite(1408, 1408, 'steelLeft');
+        game.steelDoor16 = game.add.sprite(384, 6176, 'steelLeft');                               
+        
+               
 		},
 	/****************************************************************/
 
